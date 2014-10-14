@@ -1,0 +1,31 @@
+<html xmlns="http://www.w3.org/1999/xhtml"  
+    xmlns:h="http://java.sun.com/jsf/html"  
+    xmlns:f="http://java.sun.com/jsf/core"  
+    xmlns:p="http://primefaces.org/ui">  
+  
+    <h:head>  
+  
+    </h:head>  
+      
+    <h:body>  
+      <h:form>
+		<p:growl id="growl" showDetail="true" life="5000" />  
+		 
+		    <p:fieldset style="margin-bottom:20px">
+		        <h:panelGrid columns="2" cellpadding="5" id="formPanelGrid">
+		        	<h:outputLabel value="Código:" />
+		        	<h:inputText value="#{usersMB.users.codigo}" />
+
+		        	<h:outputLabel value="Nome:" />
+		        	<h:inputText value="#{usersMB.users.username}" />
+		        	
+		        	<h:outputLabel value="" />
+		        	<p:commandButton value="Confirmar" id="ajax" update="growl, formPanelGrid" actionListener="#{usersMB.confirmar}" styleClass="ui-priority-primary" />
+		        	
+		        </h:panelGrid>
+		    </p:fieldset>
+		          	
+      </h:form>
+          
+    </h:body>  
+</html>
